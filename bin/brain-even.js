@@ -3,7 +3,6 @@ import readlineSync from "readline-sync";
 
 const isOddNumber = (number) => number % 2 === 0;
 
-const randomNumber = Math.floor(Math.random() * 100);
 const userName = readlineSync.question("May I have your name? ");
 console.log(`Hello, ${userName}!`);
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
