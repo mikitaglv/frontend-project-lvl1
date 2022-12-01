@@ -10,12 +10,8 @@ while (answers < 3) {
   const randomNumber1 = Math.floor(Math.random() * 100);
   const randomNumber2 = Math.floor(Math.random() * 100);
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
-  let correctAnswer =
-    randomNumber1 < randomNumber2 ? randomNumber1 : randomNumber2;
-  while (
-    randomNumber1 % correctAnswer != 0 ||
-    randomNumber2 % correctAnswer != 0
-  ) {
+  let correctAnswer = randomNumber1 < randomNumber2 ? randomNumber1 : randomNumber2;
+  while (randomNumber1 % correctAnswer !== 0 || randomNumber2 % correctAnswer !== 0) {
     correctAnswer -= 1;
   }
 
@@ -24,9 +20,7 @@ while (answers < 3) {
     console.log('Correct!');
     answers += 1;
   } else {
-    console.log(
-      `'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`
-    );
+    console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     break;
   }
 
