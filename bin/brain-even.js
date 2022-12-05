@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
+import greeting from "../src/cli.js";
 
 const isEvenNumber = (number) => number % 2 === 0;
 
-const userName = readlineSync.question("May I have your name? ");
-console.log(`Hello, ${userName}!`);
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const userName = greeting();
 
 let answers = 0;
 while (answers < 3) {
