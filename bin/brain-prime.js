@@ -25,9 +25,6 @@ while (answers < 3) {
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
     answers += 1;
-  } else if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    answers += 1;
   } else {
     console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     break;
