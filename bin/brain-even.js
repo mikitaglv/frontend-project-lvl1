@@ -9,13 +9,11 @@ const userName = greeting();
 let answers = 0;
 while (answers < 3) {
   const randomNumber = Math.floor(Math.random() * 100);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log(`Question: ${randomNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
 
   if (userAnswer === 'yes' && isEvenNumber(randomNumber)) {
-    console.log('Correct!');
-    answers += 1;
-  } else if (userAnswer === 'no' && !isEvenNumber(randomNumber)) {
     console.log('Correct!');
     answers += 1;
   } else {
