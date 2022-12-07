@@ -12,8 +12,9 @@ while (answers < 3) {
   const randomNumber = Math.floor(Math.random() * 100 + 1);
   console.log(`Question: ${randomNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
+  const correctAnswer = isEvenNumber(randomNumber) ? 'yes' : 'no';
 
-  if (userAnswer === 'yes' && isEvenNumber(randomNumber)) {
+  if (userAnswer === correctAnswer) {
     console.log('Correct!');
     answers += 1;
   } else {
