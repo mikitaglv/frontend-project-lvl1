@@ -5,11 +5,11 @@ import greeting from '../src/cli.js';
 const isEvenNumber = (number) => number % 2 === 0;
 
 const userName = greeting();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let answers = 0;
 while (answers < 3) {
   const randomNumber = Math.floor(Math.random() * 100 + 1);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log(`Question: ${randomNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
 
