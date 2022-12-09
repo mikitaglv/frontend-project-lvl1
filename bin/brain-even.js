@@ -1,28 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import greeting from '../src/cli.js';
+import { gameEven } from '../src/games/game-even.js';
 
-const isEvenNumber = (number) => number % 2 === 0;
-
-const userName = greeting();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-let answers = 0;
-while (answers < 3) {
-  const randomNumber = Math.floor(Math.random() * 100 + 1);
-  console.log(`Question: ${randomNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = isEvenNumber(randomNumber) ? 'yes' : 'no';
-
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    answers += 1;
-  } else {
-    console.log(`'${userAnswer}' is wrong answer :(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
-    break;
-  }
-
-  if (answers === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
-}
+gameEven();
