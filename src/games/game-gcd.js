@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber, userName } from '../index.js';
 
-export const gameGcd = (rounds = 3) => {
+const gameGcd = (rounds = 3) => {
   console.log('Find the greatest common divisor of given numbers.');
 
   let answers = 0;
@@ -22,9 +22,11 @@ export const gameGcd = (rounds = 3) => {
       console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       break;
     }
-  
+
     if (answers === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
   }
 };
+
+export default gameGcd;

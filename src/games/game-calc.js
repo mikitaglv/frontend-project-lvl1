@@ -35,6 +35,6 @@ const gameCalc = (rounds = 3) => {
       console.log(`Congratulations, ${userName}!`);
     }
   }
-}
+};
 
 export default gameCalc;

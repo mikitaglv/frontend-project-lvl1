@@ -1,23 +1,23 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber, userName } from '../index.js';
 
-export const gameProgression = (rounds = 3) => {
+const gameProgression = (rounds = 3) => {
   console.log('What number is missing in the progression?');
 
   let answers = 0;
   while (answers < rounds) {
     const hiddenPosition = Math.floor(Math.random() * 10);
     const progression = [];
-    const step = Math.floor(Math.random() * 10);
-    let currentNumber = Math.floor(Math.random() * 100);
+    const step = getRandomNumber(10);
+    let currentNumber = getRandomNumber(100);
     for (let i = 0; i < 10; i += 1) {
       if (i === hiddenPosition) {
-          progression.push('..');
+        progression.push('..');
       } else {
-          progression.push(currentNumber);
+        progression.push(currentNumber);
       }
       currentNumber += step;
-    };
+    }
 
     console.log(`Question: ${progression.join(' ')}`);
     const correctAnswer = progression[hiddenPosition + 1] - step;
@@ -34,4 +34,6 @@ export const gameProgression = (rounds = 3) => {
       console.log(`Congratulations, ${userName}!`);
     }
   }
-}
+};
+
+export default gameProgression;

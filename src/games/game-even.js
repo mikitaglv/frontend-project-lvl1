@@ -3,7 +3,7 @@ import { getRandomNumber, userName } from '../index.js';
 
 const isEvenNumber = (number) => number % 2 === 0;
 
-export const gameEven = (rounds = 3) => {
+const gameEven = (rounds = 3) => {
   const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
   console.log(evenRule);
 
@@ -13,7 +13,7 @@ export const gameEven = (rounds = 3) => {
     console.log(`Question: ${gameNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = isEvenNumber(gameNumber) ? 'yes' : 'no';
-  
+
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       answers += 1;
@@ -21,9 +21,11 @@ export const gameEven = (rounds = 3) => {
       console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       break;
     }
-  
+
     if (answers === 3) {
       console.log(`Congratulations, ${userName}!`);
     }
   }
 };
+
+export default gameEven;
