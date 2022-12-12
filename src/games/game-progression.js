@@ -8,7 +8,7 @@ const gameProgression = (rounds = 3) => {
   while (answers < rounds) {
     const hiddenPosition = Math.floor(Math.random() * 10);
     const progression = [];
-    let correctAnswer = undefined;
+    let correctAnswer;
     const step = getRandomNumber(10);
     let currentNumber = getRandomNumber(100);
     for (let i = 0; i < 10; i += 1) {
