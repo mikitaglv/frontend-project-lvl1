@@ -8,10 +8,12 @@ const gameProgression = (rounds = 3) => {
   while (answers < rounds) {
     const hiddenPosition = Math.floor(Math.random() * 10);
     const progression = [];
+    let correctAnswer = undefined;
     const step = getRandomNumber(10);
     let currentNumber = getRandomNumber(100);
     for (let i = 0; i < 10; i += 1) {
       if (i === hiddenPosition) {
+        correctAnswer = currentNumber;
         progression.push('..');
       } else {
         progression.push(currentNumber);
@@ -20,7 +22,6 @@ const gameProgression = (rounds = 3) => {
     }
 
     console.log(`Question: ${progression.join(' ')}`);
-    const correctAnswer = progression[hiddenPosition + 1] - step;
     const userAnswer = Number(readlineSync.question('Your answer: '));
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
